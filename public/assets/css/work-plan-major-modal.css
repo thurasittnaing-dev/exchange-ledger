@@ -1,0 +1,46 @@
+/* Major Plan Create Modal */
+
+.major-plan-modal .modal-header {
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.08) 0%, rgba(44, 90, 160, 0.02) 100%);
+    border-bottom: 1px solid rgba(44, 90, 160, 0.12);
+}
+
+.major-plan-modal-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color, #2c5aa0);
+    color: #fff;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.major-plan-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.85rem;
+    padding: 1rem 1.1rem;
+}
+
+.major-plan-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.85rem;
+}
+
+.major-plan-section-title i {
+    color: var(--primary-color, #2c5aa0);
+}
+
+.major-plan-helper {
+    font-size: 0.8125rem;
+    color: #64748b;
+    margin-bottom: 0.85rem;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Work PLan Approve Letter</title>
+    <style>
+        body {
+            font-family: pyidaungsu;
+            font-size: 11pt;
+            line-height: 22px;
+            font-weight: 200;
+        }
+        * {
+            font-weight: normal !important;
+            -webkit-text-stroke: 0px;
+        }
+
+        page[size="A4"] {
+            background: white;
+            width: 21cm;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            border: 1.25cm solid #000;
+        }
+        .justified-text {
+        text-align: justify; /* ဒီနေရာမှာပဲ justify သုံးပါ */
+        line-height: 1.6;
+    }
+    </style>
+</head>
+
+<body>
+
+    <htmlpageheader name="pageheader">
+
+    </htmlpageheader>
+
+    <page size="A4">
+        <table style="width: 100%; border: none; margin: 0; padding: 0;">
+            <tr>
+                <td style="text-align: right; padding: 0;">
+
+                    <table align="right" style="border: none; margin: 0; padding: 0;">
+                        <tr>
+                            <td style="text-align: left; font-family: 'pyidaungsu';">
+                                တိုင်းဒေသကြီးအစားအသောက်နှင့် ဆေးဝါးကွပ်ကဲရေးဦးစီးဌာနမှူးရုံး<br>
+                                ###TO_OFFICER###<br>
+                                စာအမှတ်၊ ပခတ၊ အစဆဝ (စီမံ)<br>
+                                ရက်စွဲ၊ ###DATE###
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        <div style="text-align: left; margin-bottom: 20px;">
+            သို့ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ညွှန်ကြားရေးမှူးချုပ်<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;အစားအသောက်နှင့်ဆေးဝါးကွပ်ကဲရေးဦးစီးဌာန<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;နေပြည်တော်
+        </div>
+
+        <div class="content-table">
+            အကြောင်းအရာ။&nbsp;&nbsp;###PLAN_YEAR### ခုနှစ်၊ ###PLAN_MONTH###အတွက် ရှေ့လုပ်ငန်းစဉ်(Work Plan)တင်ပြခြင်း<br>
+            ရည်ညွှန်းချက်&nbsp;&nbsp;&nbsp;။&nbsp;&nbsp;အစားအသောက်နှင့် ဆေးဝါးကွပ်ကဲရေးဌာန၊ နေပြည်တော်၏ (၁၃.၁၂.၂၀၂၂) ရက်စွဲပါ<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;စာအမှတ်၊ အစဆ (စီမံကိန်း)/ ၂၀၂၂/ ၄၄၁
+        </div>
+        <br>
+        <div style="width: 100%; font-family: 'pyidaungsu'; text-align: justify; word-wrap: break-word;">
+            ###DESCRIPTION###
+        </div>
+
+        <br><br><br><br>
+        <div style="text-align: right;">
+            (မေသန်းနိုင်)<br>တိုင်းဒေသကြီးဦးစီးမှူး
+        </div>
+        <div style="line-height:normal">
+            မိတ္တူကို - <br>
+            &nbsp;&nbsp;&nbsp; -ရုံးလက်ခံ <br>
+            &nbsp;&nbsp;&nbsp; -မျှောစာတွဲ <br>
+       </div>
+
+    </page>
+
+    <htmlpagefooter name="footer" style="display:none;">
+
+    </htmlpagefooter>
+
+</body>
+
+</html>
+

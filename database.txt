@@ -1,0 +1,36 @@
+money exchange ledger အတွက် Database Structure တစ်ခုဆောက်ပေးပါ။
+အသေးစိပ် flow ကိုပြောပြပါ့မယ်
+ငွေလွှဲ/ငွေထုတ် Services ပြုလုပ်နေတဲ့ ဆိုင်တစ်ခုအတွက် Project ရေးဆွဲပေးမှာဖြစ်ပါတယ်။
+အရင်ဆုံး Account တွေရှိပါမယ်။ Account တွေမှာသက်ဆိုင်ရာ BankingType အမျိုးအစားတွေ ရှိပါမယ်။
+Example Account : Mg Mg (KBZPay),Ma Ma (KBZAgent),Ko Ko (CBPay) ...etc
+ပြီးရင် ဆိုင်မှာ အဓိက အားဖြင့် emoney,cash ဆိုပြီး ငွေ ၂မျိုး ၂စား ရှိပါတယ်
+ပြီးရင် စောနက Account တွေက emoney အမျိုးအစားဖြစ်ပါတယ်။
+အဲ့ဒီ Account တွေကနေ ငွေလွှဲ/ငွေထုတ် တာမျိုးလုပ်ပါမယ်။
+1. Cash-In. Cash-In အမျိုးအစား Transaction သည် Cash က Income အနေနဲ့ဝင်လာပြီး emoney က Outcome အနေနဲ့ ထွက်သွားတာမျိုးဖြစ်ပြီး Service Fee ကတော့ Income အနေနဲ့ ဝင်လာမှာပဲ ဖြစ်ပါတယ်။
+
+2. Cash-Out. Cash-Out အမျိုးအစားကတော့ Transaction သည် Cash က Outcome အနေနဲ့ထွက်သွားပြီး သက်ဆိုင်ရင် Account ထဲသို့ emoney သည် Income အနေနဲ့ ဝင်လာမှာပဲ ဖြစ်ပါတယ်။ Service Fee ကတော့ Income အနေနဲ့ ဝင်လာမှာပဲ ဖြစ်ပါတယ်။
+
+ဒီနေရာမှာ ထည့်စဥ်းစားစရာ ရှိပါတယ် Service Fee ကိစ္စပါ။
+Income အနေနဲ့ ဝင်လာတဲ့ Service Fee မှာလည်း emoney နဲ့ cash ဆိုပြီးထပ်ခွဲချင်ပါတယ်။
+ဒါပေမယ့် Customer တွေဟာ အမြဲတမ်း Service Fee ကို အပိုအနေနဲ့ ပေးလေ့မရှိပါဘူး သူတို့ Transfer လုပ်တဲ့ Amount ထဲက ဖြတ်ရတဲ့ အခါတွေလည်းရှိပါတယ်။
+
+Example :
+
+1. Exact Top-up : အတိအကျပေးခြင်း - Cash-In
+
+Cash Amount - 10000
+Service Fee Cash - 500
+emoney Out Come - 10000
+
+2. Net Top-up : ဖြတ်ခြင်း - Cash In
+
+Cash Amount - 10000
+Service Fee emoney - 5000
+emoney Out Come - 90500
+
+
+နောက်တစ်ခုအနေနဲ့ကတော့ Account တွေရဲ့ Balancing တွေကို Reset လုပ်တာတွေ ငွေထည့်တာတွေ လုပ်ရင် History ကျန်ချင်ပါတယ် အဲ့ဒီ History နဲ့လည်း ငွေလွှဲ ငွေသွင်းလုပ်ထားတဲ့ Transaction တွေကို ချိတ်ထားချင်ပါတယ်။
+
+နောက် ထည့်ဆွဲပေးရမှာက ဆိုင်ဘက်က ထည့်ထားတဲ့ ချေးငွေစာရင်းပါ။
+
+အနှစ်ချုပ် Report ကြည့်တဲ့အခါမှာ ဆိုင်ရဲ့ လက်ရှိ emoney amount, cash amount, ယူထားတဲ့ အကြွေးစာရင်း အားလုံးကို စာရင်းတွက်ချက်ပြီး Summary ကြည့်ချင်ပါတယ်။

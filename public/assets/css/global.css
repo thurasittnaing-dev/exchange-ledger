@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'mm-font';
+    src: url("./../fonts/pyidaungsu_regular.ttf");
+}
+
+@font-face {
+    font-family: 'mm-font-bold';
+    src: url("./../fonts/pyidaungsu_bold.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #2C5AA0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #F5F5F4;
+    padding: 0;
+}
+
+.bg-primary {
+    background-color: var(--primary-color)!important;
+}
+
+.page-item.active .page-link, .page-item.active .page-link:hover, .page-item.active .page-link:focus, .pagination li.active > a:not(.page-link), .pagination li.active > a:not(.page-link):hover, .pagination li.active > a:not(.page-link):focus {
+    border-color: var(--primary-color)!important;
+    background-color: var(--primary-color)!important;
+}
+
+.error-help-block {
+    color: #dc3545;
+    font-size: 14px;
+    margin: 5px 0;
+    display: block;
+}
+
+.btn-dark {
+    background-color: #262626!important;
+}
+
+.form-check-input:checked, .form-check-input[type=checkbox]:indeterminate{
+    background-color: var(--primary-color)!important;
+    border: var(--primary-color)!important;
+}
+
+.logo-text {
+    font-family:Arial, Helvetica, sans-serif;
+    user-select: none;
+    font-weight: 800;
+    color: #F54927;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.page-link {
+    background-color: #fff;
+}
+
+.filter-card {
+    background-color: #fbfcfc;
+    padding: 2rem 0 0.5rem 0;
+}
+
+
+.select2-container .select2-selection--single {
+    height: 2.35rem!important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 2.35rem!important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 2.35rem!important;
+}
+
+.flatpickr-input .form-control:disabled, .form-control[readonly] {
+    background-color: #fff!important;
+}
+
+.toast .bs-toast {
+    opacity: 1!important;
+}
+
+
+.bg-menu-theme .menu-inner > .menu-item.active:before {
+    background-color: var(--primary-color)!important;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.card-header {
+    padding: 1rem 1.25rem;
+}
+
+.brand-name {
+    font-family: 'mm-font-bold' serif!important;
+    user-select: none;
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.sub-title {
+    color: #62748E;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color)!important;
+    border: var(--primary-color)!important;
+}
+
+.bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
+    background-color: var(--primary-color)!important;
+    color: #fff!important;
+    font-weight: normal!important;
+    border: 1px solid;
+    border-color: var(--primary-color)!important;
+}
+
+.menu-link{
+    font-family: 'mm-font-bold';
+}
+
+.menu .app-brand.demo {
+    height: auto;
+    min-height: 5.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(44, 90, 160, 0.08);
+    margin-bottom: 0.75rem;
+}
+
+.menu .app-brand .app-brand-link {
+    gap: 0.875rem;
+    min-width: 0;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+}
+
+.menu .app-brand .app-brand-link:hover {
+    opacity: 0.88;
+}
+
+.menu .app-brand .app-brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(145deg, #1e3f73 0%, var(--primary-color) 100%);
+    color: #fff;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.2);
+}
+
+.menu .app-brand .app-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: inherit;
+}
+
+.menu .app-brand .main-text {
+    display: block;
+    font-family: 'mm-font-bold', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu .app-brand .sub-text {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #64748b;
+    margin-top: 0;
+    opacity: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-item  a {
+    font-size: 1rem!important;
+    color:#000!important;
+}
+
+.menu-header-text {
+    color:#000!important;
+}
+
+.welcome-text {
+    font-weight: 600;
+    color:#000!important;
+}
+
+.fancy-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px!important;
+}
+
+.welcome-sub-text {
+    font-size: 0.8rem;
+    color:#000!important;
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Standardizes the space between icon and text */
+}
+
+.btn i {
+    line-height: 0; /* Prevents the icon's font-box from adding extra height */
+}
+
+.page-main-header {
+    color:#000!important;
+    font-size: 1.35rem;
+}
+
+.page-sub-header {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.super-rounded {
+    overflow: hidden;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 0.85rem;
+}
+
+
+.icon-font {
+    font-size: 1.3rem!important;
+}
+
+.avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.avatar-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.avatar-wrapper:hover .avatar-preview {
+    opacity: 0.8;
+}
+
+.camera-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #696cff;
+    /* Adjust to your primary theme color */
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-10%, -10%);
+}

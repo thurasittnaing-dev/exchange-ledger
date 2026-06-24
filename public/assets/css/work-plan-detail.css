@@ -1,0 +1,751 @@
+/* Work Plan Detail Page */
+
+.work-plan-detail {
+    padding-bottom: 2rem;
+}
+
+.work-plan-section-nav {
+    background: #fff;
+    padding: 0.5rem;
+    /* position: sticky; */
+    top: 4.5rem;
+    /* Below layout navbar (z-index: 2) so user dropdown stays on top */
+    z-index: 1;
+}
+
+.work-plan-section-nav-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 0.15rem;
+}
+
+.work-plan-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.65rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #62748e;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent;
+}
+
+.work-plan-nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(44, 90, 160, 0.06);
+}
+
+.work-plan-nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(44, 90, 160, 0.35);
+}
+
+.work-plan-nav-link i {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Accordion */
+.work-plan-accordion .accordion-item {
+    border: none;
+    background: transparent;
+}
+
+.work-plan-accordion .accordion-button {
+    padding: 1.1rem 1.25rem;
+    font-weight: 600;
+    background: #fff;
+    box-shadow: none;
+    gap: 0.85rem;
+    align-items: flex-start;
+}
+
+.work-plan-accordion .accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.08) 0%, #fff 100%);
+    border-bottom: 1px solid rgba(44, 90, 160, 0.12);
+}
+
+.work-plan-accordion .accordion-button::after {
+    margin-top: 0.35rem;
+}
+
+.work-plan-accordion-icon {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.65rem;
+    background: rgba(44, 90, 160, 0.1);
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.work-plan-accordion-button:not(.collapsed) .work-plan-accordion-icon,
+.work-plan-accordion .accordion-button:not(.collapsed) .work-plan-accordion-icon {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.work-plan-accordion-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+}
+
+.work-plan-accordion-label {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-family: 'mm-font-bold', 'Roboto', sans-serif;
+}
+
+.work-plan-accordion-sub {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #62748e;
+    margin-top: 0.15rem;
+}
+
+.work-plan-accordion .accordion-body {
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+}
+
+/* Info fields */
+.work-plan-info-field {
+    background: #f8fafc;
+    border: 1px solid #e8edf3;
+    border-radius: 0.65rem;
+    padding: 0.85rem 1rem;
+    height: 100%;
+}
+
+.work-plan-info-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #62748e;
+    margin-bottom: 0.35rem;
+}
+
+.work-plan-info-value {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.45;
+}
+
+/* Status badges */
+.work-plan-status-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4em 0.85em;
+    border-radius: 2rem;
+}
+
+.work-plan-status-submitted,
+.work-plan-status-resubmitted {
+    background-color: rgba(44, 90, 160, 0.12);
+    color: var(--primary-color);
+}
+
+.work-plan-status-incomplete {
+    background-color: rgba(255, 171, 0, 0.15);
+    color: #b76e00;
+}
+
+.work-plan-status-approve {
+    background-color: rgba(40, 167, 69, 0.12);
+    color: #1e7e34;
+}
+
+/* Major plan minor plans table */
+.work-plan-minors-table-wrap {
+    border-top: 1px solid #e8edf3;
+}
+
+.work-plan-minors-table thead th {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #62748e;
+    white-space: nowrap;
+}
+
+.work-plan-minors-table tbody td {
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+/* Major plan children list */
+.work-plan-child-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #e8edf3;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.work-plan-child-link:last-child {
+    border-bottom: 0;
+}
+
+.work-plan-child-link:hover {
+    background: rgba(44, 90, 160, 0.05);
+    color: inherit;
+}
+
+.work-plan-child-link-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.work-plan-child-case {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.work-plan-child-title {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.45;
+}
+
+.work-plan-child-link-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+    color: #62748e;
+}
+
+.work-plan-child-link-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.work-plan-child-link-action {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: rgba(44, 90, 160, 0.08);
+    color: var(--primary-color);
+}
+
+.work-plan-child-empty {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #62748e;
+}
+
+.work-plan-child-empty i {
+    font-size: 2rem;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+}
+
+.work-plan-minor-history-group {
+    border: 1px solid #e8edf3;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.work-plan-minor-history-group:last-child {
+    margin-bottom: 0;
+}
+
+.work-plan-minor-history-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e8edf3;
+    text-decoration: none;
+    color: inherit;
+}
+
+.work-plan-minor-history-heading:hover {
+    background: rgba(44, 90, 160, 0.05);
+    color: inherit;
+}
+
+.work-plan-minor-history-title {
+    display: block;
+    font-size: 0.875rem;
+    color: #334155;
+    margin-top: 0.15rem;
+}
+
+.work-plan-minor-history-group .work-plan-timeline {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .work-plan-child-link {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .work-plan-child-link-meta {
+        width: 100%;
+    }
+
+    .work-plan-child-link-action {
+        margin-left: auto;
+    }
+}
+
+/* Activity table */
+.work-plan-activity-table-wrap {
+    border: 1px solid #cbd5e1;
+    border-radius: 0.65rem;
+    background: #fff;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.work-plan-activity-table {
+    width: 100%;
+    min-width: 960px;
+    margin-bottom: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    --work-plan-table-border: #dbe3ee;
+    --work-plan-table-border-strong: #b8c5d6;
+    --work-plan-week-bg: #f4f8fc;
+}
+
+.work-plan-col-plus {
+    width: 3rem;
+}
+
+.work-plan-col-no {
+    width: 3.25rem;
+}
+
+.work-plan-col-week {
+    width: 6.75rem;
+}
+
+.work-plan-col-subject {
+    width: 11%;
+}
+
+.work-plan-col-substance {
+    width: 11%;
+}
+
+.work-plan-col-content {
+    width: 32%;
+}
+
+.work-plan-col-expense-type {
+    width: 13%;
+}
+
+.work-plan-col-cost {
+    width: 7.25rem;
+}
+
+.work-plan-col-row-actions {
+    width: 5.75rem;
+}
+
+.work-plan-activity-table > :not(caption) > * > * {
+    border-color: var(--work-plan-table-border);
+}
+
+.work-plan-activity-table thead th {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #475569;
+    font-weight: 700;
+    border-bottom: 2px solid var(--work-plan-table-border-strong);
+    padding: 0.7rem 0.65rem;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.work-plan-activity-table thead th.work-plan-th-subject,
+.work-plan-activity-table thead th.work-plan-th-substance,
+.work-plan-activity-table thead th.work-plan-th-expense-type {
+    white-space: normal;
+    line-height: 1.25;
+}
+
+.work-plan-activity-table thead th.work-plan-th-cost {
+    white-space: normal;
+    line-height: 1.2;
+    font-size: 0.68rem;
+    padding-inline: 0.45rem;
+}
+
+.work-plan-activity-table tbody td {
+    padding: 0.7rem 0.65rem;
+    font-size: 0.875rem;
+    vertical-align: middle;
+    background: #fff;
+    overflow: hidden;
+}
+
+.work-plan-activity-table tbody tr.work-plan-week-block-end td,
+.work-plan-activity-table tbody tr.work-plan-empty-row td {
+    border-bottom: 2px solid var(--work-plan-table-border-strong);
+}
+
+.work-plan-activity-table tbody tr.work-plan-expense-start td {
+    border-top: 1px dashed #cfd9e6;
+}
+
+.work-plan-activity-table tbody tr.work-plan-week-block-end:last-child td {
+    border-bottom-width: 1px;
+    border-bottom-color: var(--work-plan-table-border);
+}
+
+.work-plan-week-action,
+.work-plan-week-no,
+.work-plan-week-label {
+    background: var(--work-plan-week-bg);
+    border-right-color: #c7d7ea;
+}
+
+.work-plan-week-action {
+    border-right: 1px solid #c7d7ea;
+}
+
+.work-plan-week-no {
+    width: 4rem;
+    font-weight: 600;
+}
+
+.work-plan-week-label {
+    width: 6.75rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.work-plan-content {
+    vertical-align: middle;
+    background: #fcfdfe;
+}
+
+.work-plan-content-badge {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.45rem;
+    background: rgba(44, 90, 160, 0.06);
+    border: 1px solid rgba(44, 90, 160, 0.12);
+    color: #1e3a5f;
+    font-weight: 600;
+    line-height: 1.45;
+    word-break: break-word;
+    white-space: normal;
+    text-align: left;
+}
+
+.work-plan-description {
+    vertical-align: middle;
+    background: #fcfdfe;
+}
+
+.work-plan-description-badge {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.45rem;
+    background: rgba(15, 118, 110, 0.08);
+    border: 1px solid rgba(15, 118, 110, 0.14);
+    color: #0f766e;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+    white-space: normal;
+    text-align: left;
+}
+
+.work-plan-substance {
+    vertical-align: middle;
+    background: #fcfdfe;
+}
+
+.work-plan-expense-type {
+    background: #fcfdfe;
+}
+
+.work-plan-type-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+
+.work-plan-type-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.work-plan-type-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #94a3b8;
+    line-height: 1.2;
+}
+
+.work-plan-type-empty {
+    display: inline-flex;
+    align-items: center;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.work-plan-sub-category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 100%;
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.4rem;
+    background: rgba(109, 40, 217, 0.08);
+    border: 1px solid rgba(109, 40, 217, 0.16);
+    color: #6d28d9;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.work-plan-sub-category-tag i {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.work-plan-substance-tag {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.45rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.work-plan-substance-parent {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.work-plan-substance-name {
+    color: #334155;
+}
+
+.work-plan-substance-sep {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    color: #cbd5e1;
+    line-height: 1;
+}
+
+.work-plan-expense-badge {
+    /* display: block;
+    width: 100%; */
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.45rem;
+    background: rgba(44, 90, 160, 0.08);
+    color: #2c5aa0;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.work-plan-estimate-cost {
+    width: 7.25rem;
+    color: #0f172a;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+    font-size: 0.84rem;
+    padding-inline: 0.45rem !important;
+}
+
+.work-plan-actions-head {
+    width: 5.75rem;
+    padding-inline: 0.35rem !important;
+}
+
+.work-plan-row-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+}
+
+.work-plan-add-expense-btn,
+.work-plan-row-action {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.work-plan-add-expense-btn i,
+.work-plan-row-action i {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.work-plan-empty-row td {
+    color: #94a3b8;
+    background: #fafbfd;
+}
+
+.work-plan-empty-row .work-plan-week-label {
+    color: #64748b;
+}
+
+.activity-expense-items-section {
+    border-top: 1px solid #edf2f7;
+    padding-top: 1rem;
+}
+
+.activity-expense-items-list .activity-expense-item-row {
+    background: #f8fafc;
+    border: 1px solid #e8edf3;
+    border-radius: 0.65rem;
+    padding: 0.75rem 0.75rem 0;
+    margin-bottom: 0.65rem;
+}
+
+.activity-expense-items-list .activity-expense-item-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline */
+.work-plan-timeline-item {
+    position: relative;
+    padding-left: 1.75rem;
+    padding-bottom: 1.25rem;
+}
+
+.work-plan-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.work-plan-timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 1.25rem;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.work-plan-timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px rgba(44, 90, 160, 0.25);
+}
+
+.work-plan-timeline-submit .work-plan-timeline-marker {
+    background: var(--primary-color);
+}
+
+.work-plan-timeline-forward .work-plan-timeline-marker {
+    background: #17a2b8;
+    box-shadow: 0 0 0 2px rgba(23, 162, 184, 0.25);
+}
+
+.work-plan-timeline-review .work-plan-timeline-marker {
+    background: #ffab00;
+    box-shadow: 0 0 0 2px rgba(255, 171, 0, 0.3);
+}
+
+.work-plan-timeline-content {
+    background: #f8fafc;
+    border: 1px solid #e8edf3;
+    padding: 0.85rem 1rem;
+}
+
+/* Actions card */
+.work-plan-actions-card {
+    background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+    border-top: 3px solid var(--primary-color);
+}
+
+.work-plan-actions-heading {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.work-plan-action-btn {
+    min-width: 8.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .work-plan-action-btn {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .work-plan-section-nav {
+        top: 3.5rem;
+    }
+}
