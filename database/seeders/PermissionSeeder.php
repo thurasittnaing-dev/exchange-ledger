@@ -144,6 +144,21 @@ class PermissionSeeder extends Seeder
                 'name' => 'Export',
                 'code' => 'cash-money-export',
             ],
+            [
+                'module' => 'Transaction',
+                'name' => 'View',
+                'code' => 'transaction-list',
+            ],
+            [
+                'module' => 'Transaction',
+                'name' => 'Create',
+                'code' => 'transaction-create',
+            ],
+            [
+                'module' => 'Transaction',
+                'name' => 'Export',
+                'code' => 'transaction-export',
+            ],
         );
 
         foreach ($permissions as $permission) Permission::create($permission);

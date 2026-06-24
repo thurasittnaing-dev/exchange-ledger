@@ -13,6 +13,7 @@ use App\Interfaces\DivisionRepositoryInterface;
 use App\Interfaces\ExpenseCategoryRepositoryInterface;
 use App\Interfaces\PermissionRepositoryInterface;
 use App\Interfaces\SubstanceRepositoryInterface;
+use App\Interfaces\TransactionRepositoryInterface;
 use App\Interfaces\UserRepositoryInterface;
 use App\Interfaces\WorkPlanActionRepositoryInterface;
 use App\Interfaces\WorkPlanRepositoryInterface;
@@ -31,6 +32,7 @@ use App\Repositories\DivisionRepository;
 use App\Repositories\ExpenseCategoryRepository;
 use App\Repositories\PermissionRepository;
 use App\Repositories\SubstanceRepository;
+use App\Repositories\TransactionRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\WorkPlanActionRepository;
 use App\Repositories\WorkPlanRepository;
@@ -59,6 +61,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(AccountRepositoryInterface::class, AccountRepository::class);
         $this->app->bind(AccountBalanceHistoryRepositoryInterface::class, AccountBalanceHistoryRepository::class);
         $this->app->bind(CashMoneyRepositoryInterface::class, CashMoneyRepository::class);
+        $this->app->bind(TransactionRepositoryInterface::class, TransactionRepository::class);
     }
 
     /**

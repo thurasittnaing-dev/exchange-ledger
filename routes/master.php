@@ -12,6 +12,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SubstanceController;
+use App\Http\Controllers\TransactionController;
 
 // Permission Management
 Route::resource('permissions', PermissionController::class)->except('show');
@@ -133,4 +134,13 @@ Route::prefix('cash_money')->name('cash_money.')->group(function () {
     Route::post('/', [CashMoneyController::class, 'store'])->name('store');
     Route::get('/data/ajax', [CashMoneyController::class, 'data'])->name('data');
     Route::get('/export', [CashMoneyController::class, 'export'])->name('export');
+});
+
+// Transactions (Cash-In / Cash-Out)
+Route::prefix('transactions')->name('transactions.')->group(function () {
+    Route::get('/', [TransactionController::class, 'index'])->name('index');
+    Route::get('/create', [TransactionController::class, 'create'])->name('create');
+    Route::post('/', [TransactionController::class, 'store'])->name('store');
+    Route::get('/data/ajax', [TransactionController::class, 'data'])->name('data');
+    Route::get('/export', [TransactionController::class, 'export'])->name('export');
 });

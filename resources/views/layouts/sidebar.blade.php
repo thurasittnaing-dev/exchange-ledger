@@ -10,6 +10,9 @@
         </a>
     </li>
 
+    <!-- Transactions -->
+    @include('layouts.menus.transactions-sidebar')
+
     <!-- Management Menu -->
     @include('layouts.menus.management-sidebar')
 </ul>

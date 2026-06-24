@@ -23,6 +23,14 @@ if (!function_exists('dateFormat')) {
     }
 }
 
+if (!function_exists('emoneyTotal')) {
+    function emoneyTotal(): int
+    {
+        return (int) \App\Models\Account::query()->sum('balance');
+    }
+}
+
+
 if (!function_exists('cashBalance')) {
     function cashBalance(): int
     {
@@ -43,6 +51,7 @@ if (!function_exists('navGroupActive')) {
             'accounts' => ['accounts.index', 'accounts.create', 'accounts.edit'],
             'account_balance_histories' => ['account_balance_histories.index', 'account_balance_histories.create'],
             'cash_money' => ['cash_money.index', 'cash_money.create'],
+            'transactions' => ['transactions.index', 'transactions.create'],
         ];
 
         foreach ($menus as $key => $menu) {
