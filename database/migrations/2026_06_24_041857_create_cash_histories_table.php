@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('cash_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id')->constrained('accounts')->onDelete('cascade');
-            $table->enum('reference_type', ['transaction', 'cash_history']);
-            $table->foreignId('reference_id')->constrained('transactions')->onDelete('cascade');
-            $table->enum('action', ['credit', 'debit']);
+            $table->enum('reference_type', ['transaction', 'opening', 'reset']);
+            $table->unsignedBigInteger('reference_id')->nullable();
+            $table->enum('action', ['credit', 'debit', 'reset']);
             $table->unsignedBigInteger('amount');
             $table->unsignedBigInteger('running_balance');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

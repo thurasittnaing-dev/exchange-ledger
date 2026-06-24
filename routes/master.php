@@ -4,6 +4,7 @@ use App\Http\Controllers\ActivityGroupController;
 use App\Http\Controllers\AccountBalanceHistoryController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\BankTypeController;
+use App\Http\Controllers\CashMoneyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepartmentTypeController;
 use App\Http\Controllers\DistrictController;
@@ -123,4 +124,13 @@ Route::prefix('account_balance_histories')->name('account_balance_histories.')->
     Route::post('/', [AccountBalanceHistoryController::class, 'store'])->name('store');
     Route::get('/data/ajax', [AccountBalanceHistoryController::class, 'data'])->name('data');
     Route::get('/export', [AccountBalanceHistoryController::class, 'export'])->name('export');
+});
+
+// Cash Money (Opening / Reset)
+Route::prefix('cash_money')->name('cash_money.')->group(function () {
+    Route::get('/', [CashMoneyController::class, 'index'])->name('index');
+    Route::get('/create', [CashMoneyController::class, 'create'])->name('create');
+    Route::post('/', [CashMoneyController::class, 'store'])->name('store');
+    Route::get('/data/ajax', [CashMoneyController::class, 'data'])->name('data');
+    Route::get('/export', [CashMoneyController::class, 'export'])->name('export');
 });

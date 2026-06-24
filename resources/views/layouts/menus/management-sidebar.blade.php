@@ -1,7 +1,7 @@
-@can('has-permission', ['user-list', 'permission-list', 'bank-type-list', 'account-list', 'account-balance-list'])
+@can('has-permission', ['user-list', 'permission-list', 'bank-type-list', 'account-list', 'account-balance-list', 'cash-money-list'])
 
     <li
-        class="menu-item {{ navGroupActive(['users', 'permissions', 'bank_types', 'accounts', 'account_balance_histories']) }}">
+        class="menu-item {{ navGroupActive(['users', 'permissions', 'bank_types', 'accounts', 'account_balance_histories', 'cash_money']) }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon ti ti-settings"></i>
             <div data-i18n="Layouts">စီမံခန့်ခွဲမှု</div>
@@ -15,6 +15,16 @@
                     <a href="{{ route('account_balance_histories.index') }}" class="menu-link">
                         <div data-i18n="Without menu">
                             Account Balance
+                        </div>
+                    </a>
+                </li>
+            @endcan
+
+            @can('has-permission', 'cash-money-list')
+                <li class="menu-item {{ navLinkActive(['cash_money.index', 'cash_money.create']) }}">
+                    <a href="{{ route('cash_money.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">
+                            Cash Money
                         </div>
                     </a>
                 </li>

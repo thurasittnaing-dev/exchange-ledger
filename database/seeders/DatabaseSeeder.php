@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BankTypeSeeder::class,
             AccountSeeder::class,
+            CashBalanceSeeder::class,
             TestingSeeder::class,
         ]);
     }

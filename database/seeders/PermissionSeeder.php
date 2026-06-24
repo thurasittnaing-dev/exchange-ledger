@@ -129,6 +129,21 @@ class PermissionSeeder extends Seeder
                 'name' => 'Export',
                 'code' => 'account-balance-export',
             ],
+            [
+                'module' => 'Cash Money',
+                'name' => 'View',
+                'code' => 'cash-money-list',
+            ],
+            [
+                'module' => 'Cash Money',
+                'name' => 'Create',
+                'code' => 'cash-money-create',
+            ],
+            [
+                'module' => 'Cash Money',
+                'name' => 'Export',
+                'code' => 'cash-money-export',
+            ],
         );
 
         foreach ($permissions as $permission) Permission::create($permission);

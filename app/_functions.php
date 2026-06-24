@@ -23,6 +23,14 @@ if (!function_exists('dateFormat')) {
     }
 }
 
+if (!function_exists('cashBalance')) {
+    function cashBalance(): int
+    {
+        return \App\Models\CashBalance::amount();
+    }
+}
+
+
 if (!function_exists('navGroupActive')) {
     function navGroupActive(array $menus): String
     {
@@ -34,6 +42,7 @@ if (!function_exists('navGroupActive')) {
             'bank_types' => ['bank_types.index', 'bank_types.create', 'bank_types.edit'],
             'accounts' => ['accounts.index', 'accounts.create', 'accounts.edit'],
             'account_balance_histories' => ['account_balance_histories.index', 'account_balance_histories.create'],
+            'cash_money' => ['cash_money.index', 'cash_money.create'],
         ];
 
         foreach ($menus as $key => $menu) {

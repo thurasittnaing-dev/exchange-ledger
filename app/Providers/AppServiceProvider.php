@@ -6,6 +6,7 @@ use App\Interfaces\AccountBalanceHistoryRepositoryInterface;
 use App\Interfaces\AccountRepositoryInterface;
 use App\Interfaces\ActivityGroupRepositoryInterface;
 use App\Interfaces\BankTypeRepositoryInterface;
+use App\Interfaces\CashMoneyRepositoryInterface;
 use App\Interfaces\DistrictRepositoryInterface;
 use App\Interfaces\DepartmentTypeRepositoryInterface;
 use App\Interfaces\DivisionRepositoryInterface;
@@ -23,6 +24,7 @@ use App\Repositories\AccountBalanceHistoryRepository;
 use App\Repositories\AccountRepository;
 use App\Repositories\ActivityGroupRepository;
 use App\Repositories\BankTypeRepository;
+use App\Repositories\CashMoneyRepository;
 use App\Repositories\DistrictRepository;
 use App\Repositories\DepartmentTypeRepository;
 use App\Repositories\DivisionRepository;
@@ -56,6 +58,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(BankTypeRepositoryInterface::class, BankTypeRepository::class);
         $this->app->bind(AccountRepositoryInterface::class, AccountRepository::class);
         $this->app->bind(AccountBalanceHistoryRepositoryInterface::class, AccountBalanceHistoryRepository::class);
+        $this->app->bind(CashMoneyRepositoryInterface::class, CashMoneyRepository::class);
     }
 
     /**
