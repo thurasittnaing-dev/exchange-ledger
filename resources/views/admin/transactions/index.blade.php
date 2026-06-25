@@ -62,11 +62,62 @@
             color: #6c757d;
         }
 
-        #transactions-table_wrapper .dataTables_scrollBody,
-        #transactions-table_wrapper .dataTables_scroll {
-            overflow: visible !important;
-            height: auto !important;
-            max-height: none !important;
+        .tx-table-card {
+            border: none;
+            border-radius: 0.875rem;
+            box-shadow: 0 2px 12px rgba(47, 43, 61, 0.06);
+        }
+
+        .tx-table-card .table-toolbar {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 1.25rem;
+        }
+
+        .tx-table-card .record-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        #transactions-table thead th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            background: #f8f9fa !important;
+        }
+
+        #transactions-table tbody td {
+            font-size: 0.9rem;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        #transactions-table tfoot th {
+            background: #eef2ff;
+            color: #4338ca;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-top: 2px solid #7367f0;
+            white-space: nowrap;
+        }
+
+        #transactions-table tfoot .total-label {
+            color: #4338ca;
+            font-size: 0.95rem;
+        }
+
+        .tx-table-card .table-responsive {
+            padding: 0 1rem 1rem;
+        }
+
+        #transactions-table_wrapper .dataTables_length,
+        #transactions-table_wrapper .dataTables_info {
+            padding-left: 1rem;
+            font-size: 0.875rem;
+        }
+
+        #transactions-table_wrapper .dataTables_paginate {
+            padding-right: 1rem;
         }
     </style>
 @endpush
@@ -151,28 +202,51 @@
             @include('admin.transactions.filter')
         </x-datatable.filter>
 
-        <x-datatable.wrapper>
-            <h6 class="me-3 d-flex justify-content-end text-primary">
-                Total:<span id="total_count" class="ms-1">0</span>
-            </h6>
-            <table id="transactions-table" class="table table-hover align-middle">
-                <thead class="table-light">
-                    <tr>
-                        <th>#</th>
-                        <th>Date</th>
-                        <th>Account</th>
-                        <th>Type</th>
-                        <th>Fee Type</th>
-                        <th>Amount</th>
-                        <th>Fee</th>
-                        <th>Cash Impact</th>
-                        <th>EMoney Impact</th>
-                        <th>Cash Profit</th>
-                        <th>EMoney Profit</th>
-                    </tr>
-                </thead>
-            </table>
-        </x-datatable.wrapper>
+        <div class="card tx-table-card">
+            <div class="table-toolbar d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <div>
+                    <h6 class="mb-0">Transaction Records</h6>
+                    <small class="text-muted">Filter လုပ်ထားသော records များ</small>
+                </div>
+                <span class="badge bg-label-primary record-badge">
+                    Records: <span id="total_count">0</span>
+                </span>
+            </div>
+
+            <div class="table-responsive">
+                <table id="transactions-table" class="table table-hover table-striped align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Account</th>
+                            <th>Type</th>
+                            <th>Fee Type</th>
+                            <th class="text-end">Amount</th>
+                            <th class="text-end">Fee</th>
+                            <th class="text-end">Cash Impact</th>
+                            <th class="text-end">EMoney Impact</th>
+                            <th class="text-end">Cash Profit</th>
+                            <th class="text-end">EMoney Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="5" class="text-end total-label">
+                                Grand Total (<span id="footer-count">0</span> records)
+                            </th>
+                            <th class="text-end" id="footer-amount">0</th>
+                            <th class="text-end" id="footer-fee">0</th>
+                            <th class="text-end" id="footer-cash-impact">0</th>
+                            <th class="text-end" id="footer-emoney-impact">0</th>
+                            <th class="text-end" id="footer-cash-profit">0</th>
+                            <th class="text-end" id="footer-emoney-profit">0</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
     </div>
 @endsection
 

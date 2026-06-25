@@ -43,10 +43,16 @@ final class TransactionService
 
     public function summary(Builder $query): array
     {
-        $feeCash = (int) (clone $query)->sum('fee_cash_profit');
-        $feeEmoney = (int) (clone $query)->sum('fee_emoney_profit');
+        $base = clone $query;
+        $feeCash = (int) (clone $base)->sum('fee_cash_profit');
+        $feeEmoney = (int) (clone $base)->sum('fee_emoney_profit');
 
         return [
+            'count' => (int) (clone $base)->count(),
+            'amount' => (int) (clone $base)->sum('amount'),
+            'fee_amount' => (int) (clone $base)->sum('fee_amount'),
+            'total_cash_impact' => (int) (clone $base)->sum('total_cash_impact'),
+            'total_emoney_impact' => (int) (clone $base)->sum('total_emoney_impact'),
             'fee_cash_profit' => $feeCash,
             'fee_emoney_profit' => $feeEmoney,
             'total_profit' => $feeCash + $feeEmoney,
